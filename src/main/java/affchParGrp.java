@@ -9,18 +9,31 @@ public class affchParGrp {
 	public affchParGrp(Personnel root) {
 		Arr.add(root);
 	}
+	
+	
+	
 
 	private class grpIterator implements iterator{
+		
+		int index=0;
+		
+		public void affichage() {
+			
+		}
 
 		public boolean hasNext() {
-			// TODO Auto-generated method stub
+			if(index<Arr.size())
+				return true;			
 			return false;
 		}
 
+		
 		public Personnel next() {
+			if(this.hasNext()) {
+				index++;
+				return Arr.get(index-1);
+			}	
 			return null;
-			// TODO Auto-generated method stub
-			
 		};
 		
 	}
