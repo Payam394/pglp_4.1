@@ -1,17 +1,22 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Groupe implements Department{
 	
-	String gpName;
-	public ArrayList<Department> sousHierarchie= new ArrayList<Department>();
+	public String gpName;
+	public LinkedList <Department> sousHierarchie= new LinkedList<Department>();
+	//public ArrayList<Department> sousHierarchie= new ArrayList<Department>();
 	int tb=0;
-	
-	
 	
 
 	public Groupe(String name) {
 		super();
 		this.gpName = name;
+	}
+	
+	
+	public int getSize() {
+		return sousHierarchie.size();
 	}
 
 	
@@ -35,6 +40,10 @@ public class Groupe implements Department{
 			}
 	}
 	
+	public Department getIndex(int i) {
+		return sousHierarchie.get(i);
+	}
+	
 	void tabbing(int t) {
 		for (int i=0; i!=t; i++)
 			System.out.print("\t");
@@ -55,6 +64,5 @@ public class Groupe implements Department{
 		tb--;
 		System.out.println("} fin "+gpName+"\n");
 	}
-
 
 }

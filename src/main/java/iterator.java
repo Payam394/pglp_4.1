@@ -1,7 +1,8 @@
 
-public interface iterator {
+public interface iterator{
+	
 	
 	public boolean hasNext();
-	public Personnel next();
+	public Department next();
 
 }
