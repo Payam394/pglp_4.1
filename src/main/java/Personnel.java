@@ -6,7 +6,7 @@ public class Personnel implements Department{
 	
 	private String nom;
 	private String prenom;
-	private String ID;
+	private int ID;
 	
 	private String telephone;
 	
@@ -16,19 +16,16 @@ public class Personnel implements Department{
 		
 		private String nom;
 		private String prenom;
-		private String ID;
+		private int ID;
 		
 		private String telephone;
 		
 		private LocalDate dateDeNaissance;
 		
-		public Builder (String nom, String prenom) {
+		public Builder (String nom, String prenom, int id) {
 			this.nom=nom;
 			this.prenom=prenom;
-		}
-		
-		public Builder (String ID) {
-			this.ID=ID;
+			this.ID = id;
 		}
 		
 		public Builder withTelephone(String tel) {
@@ -63,7 +60,7 @@ public class Personnel implements Department{
 	}
 	
 	public void print() {
-		System.out.println("Personnel");
+		System.out.println("Personne { "+"Nom: " + nom + "\tPrenom: " + prenom + "\tId: " + ID + " }");
 		
 	}
 	

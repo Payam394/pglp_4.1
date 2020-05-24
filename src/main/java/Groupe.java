@@ -1,28 +1,59 @@
 import java.util.ArrayList;
 
 public class Groupe implements Department{
-
-	private ArrayList<Department> sousHierarchie;
+	
+	String gpName;
+	public ArrayList<Department> sousHierarchie= new ArrayList<Department>();
+	int tb=0;
 	
 	
 	
 
-	public Groupe(ArrayList<Department> sousHierarchie) {
+	public Groupe(String name) {
 		super();
-		this.sousHierarchie = sousHierarchie;
+		this.gpName = name;
 	}
 
 	
-	public void addTo (Department d) {
+	public int addTo (Department d) {
+		try {
 		sousHierarchie.add(d);
+		return 1;
+		}
+		catch (Exception e){
+			return 0;
+		}
 	}
 	
-	public void removeFrom (Department d) {
-		sousHierarchie.remove(d);
+	public int removeFrom (Department d) {
+		try {
+			sousHierarchie.remove(d);
+			return 1;
+			}
+			catch (Exception e){
+				return 0;
+			}
+	}
+	
+	void tabbing(int t) {
+		for (int i=0; i!=t; i++)
+			System.out.print("\t");
 	}
 	
 	public void print() {
-		sousHierarchie.forEach((n) -> System.out.println(n)); 
+		
+		System.out.println("Groupe name : " + gpName);
+		System.out.println("{");
+		
+		tb++;
+		
+		for (Department i : this.sousHierarchie) {
+			tabbing(tb);
+			i.print();
+			
+		}
+		tb--;
+		System.out.println("} fin "+gpName+"\n");
 	}
 
 
