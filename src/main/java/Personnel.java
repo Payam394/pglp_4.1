@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 
 
-public class Personnel implements Groupe{
+public class Personnel implements Department{
 	
 	
 	private String nom;
